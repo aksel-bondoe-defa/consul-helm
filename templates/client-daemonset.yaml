@@ -225,7 +225,7 @@ spec:
               name: https
             {{- end }}
             - containerPort: 8502
-              hostPort: 8502
+              #hostPort: 8502
               name: grpc
             - containerPort: 8301
               {{- if .Values.client.exposeGossipPorts }}
