@@ -216,12 +216,12 @@ spec:
           ports:
             {{- if (or (not .Values.global.tls.enabled) (not .Values.global.tls.httpsOnly)) }}
             - containerPort: 8500
-              hostPort: 8500
+              #hostPort: 8500
               name: http
             {{- end }}
             {{- if .Values.global.tls.enabled }}
             - containerPort: 8501
-              hostPort: 8501
+              #hostPort: 8501
               name: https
             {{- end }}
             - containerPort: 8502
@@ -229,13 +229,13 @@ spec:
               name: grpc
             - containerPort: 8301
               {{- if .Values.client.exposeGossipPorts }}
-              hostPort: 8301
+              #hostPort: 8301
               {{- end }}
               protocol: "TCP"
               name: serflan-tcp
             - containerPort: 8301
               {{- if .Values.client.exposeGossipPorts }}
-              hostPort: 8301
+              #hostPort: 8301
               {{- end }}
               protocol: "UDP"
               name: serflan-udp
